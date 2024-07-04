@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:palouza/core/constant/route.dart';
-import 'package:palouza/view/screen/auth/login.dart';
+import 'package:palouza/core/constant/color.dart';
+import 'package:palouza/routes.dart';
 import 'package:palouza/view/screen/onboarding.dart';
 
 void main() {
@@ -18,14 +18,20 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
-      ),
-      initialRoute: 'onboarding', // Set initialRoute to 'onboarding'
-      routes: {
-        'login': (context) => const Login(), // Define your routes correctly
-        'onboarding': (context) => const OnBoarding(),
-      },
+          fontFamily: 'PlayfairDisplay',
+          textTheme: const TextTheme(
+            headlineLarge: TextStyle(
+                fontSize: 25,
+                fontWeight: FontWeight.bold,
+                color: AppColors.black),
+            bodyLarge: TextStyle(
+                fontWeight: FontWeight.w500,
+                fontSize: 18,
+                height: 1.5,
+                color: AppColors.grey),
+          )),
+      home: const OnBoarding(),
+      routes: routes,
     );
   }
 }
