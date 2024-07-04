@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:palouza/core/constant/route.dart';
+import 'package:palouza/view/screen/auth/login.dart';
 import 'package:palouza/view/screen/onboarding.dart';
 
 void main() {
@@ -19,7 +21,11 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const OnBoarding(),
+      initialRoute: 'onboarding', // Set initialRoute to 'onboarding'
+      routes: {
+        'login': (context) => const Login(), // Define your routes correctly
+        'onboarding': (context) => const OnBoarding(),
+      },
     );
   }
 }
