@@ -1,10 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:palouza/core/constant/color.dart';
+import 'package:palouza/core/localization/translation.dart';
+import 'package:palouza/core/services/services.dart';
 import 'package:palouza/routes.dart';
 import 'package:palouza/view/screen/onboarding.dart';
 
-void main() {
+void main() async{
+  WidgetsFlutterBinding.ensureInitialized();
+  await initialServices();
   runApp(const MyApp());
 }
 
@@ -16,6 +20,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
+      translations: MyTraslation(),
       title: 'Flutter Demo',
       theme: ThemeData(
           fontFamily: 'PlayfairDisplay',
